@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#E5E9A3',
         borderWidth: 1,
         borderRadius: 5,
-        borderColor: '#E5E9A3'
+        borderColor: '#E5E9A3',
+        elevation: 1
     },
     result: {
         fontSize: 30

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -16,11 +16,11 @@ export default class SomadorApp extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <View style={styles.container}>
+                <ScrollView style={styles.container}>
                     <SomadorResult />
                     <SomadorForm />
                     <SomadorList />
-                </View>
+                </ScrollView>
             </Provider>
         );
     }
@@ -28,6 +28,8 @@ export default class SomadorApp extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 30
+        padding: 30,
+        backgroundColor: '#EBEBE8'
+        
     }
 });

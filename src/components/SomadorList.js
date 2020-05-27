@@ -1,14 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View} from 'react-native';
 import { connect } from 'react-redux';
+
+import SomadorListItem from './SomadorListItem';
 
 const SomadorList = ({values}) => {
     return (
         <View>
             {values.map(value => {
-                return <Text 
-                    key={value.id}
-                    value={value.value}>{value.value}</Text>
+                return <SomadorListItem
+                        key={value.id}
+                        value={value.value}/>
             })}
         </View>
     );

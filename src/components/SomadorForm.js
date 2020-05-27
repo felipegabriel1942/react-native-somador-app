@@ -14,7 +14,6 @@ class SomadorForm extends React.Component {
         }
     }
 
-
     onChangeValue(value) {
         this.props.dispatchSetValue(value);
     }

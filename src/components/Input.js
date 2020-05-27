@@ -6,14 +6,15 @@ const Input = ({ onChangeValue, value }) => (
         keyboardType={'numeric'}
         onChangeText={onChangeValue}
         style={styles.input}
-        value={value} 
+        value={`${value}`} 
         underlineColorAndroid='green'/>
 );
 
 const styles = StyleSheet.create({
     input: {
         paddingLeft: 15,
-        paddingBottom: 15
+        paddingBottom: 15,
+        fontSize: 20
     }
 });
 
