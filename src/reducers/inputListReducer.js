@@ -5,7 +5,7 @@ const INITAL_STATE = {
     value: 0
 }
 
-const editingSomadorListReducer = (state = INITAL_STATE, action) => {
+const inputListReducer = (state = INITAL_STATE, action) => {
     switch(action.type) {
         case SET_VALUE: 
             return {
@@ -19,4 +19,4 @@ const editingSomadorListReducer = (state = INITAL_STATE, action) => {
     }
 }
 
-export default editingSomadorListReducer;
+export default inputListReducer;

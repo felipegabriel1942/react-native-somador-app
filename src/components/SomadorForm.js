@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet, Button, ToastAndroid } from 'react-native';
 import { connect } from 'react-redux';
+
 
 import Input from './Input';
 import { addValue, setValue } from '../actions';
@@ -19,7 +20,12 @@ class SomadorForm extends React.Component {
     }
 
     onPress() {
-        this.props.dispatchAddValue(this.props.value.value);
+        if(this.props.value.value != 0) {
+            ToastAndroid.show('Valor adcionado', ToastAndroid.SHORT);
+            this.props.dispatchAddValue(this.props.value.value);
+        } else {
+            ToastAndroid.show('Valor não pode ser igual a 0', ToastAndroid.SHORT);
+        }
     }
 
     render() {

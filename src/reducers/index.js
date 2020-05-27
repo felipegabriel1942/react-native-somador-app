@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import somadorListReducer from './somadorListReducer';
-import editingSomadorListReducer from './editingSomadorListReducer';
+import inputListReducer from './inputListReducer';
 
 const rootReducer = combineReducers({
     values: somadorListReducer,
-    editingValue: editingSomadorListReducer
+    editingValue: inputListReducer
 });
 
 export default rootReducer;
