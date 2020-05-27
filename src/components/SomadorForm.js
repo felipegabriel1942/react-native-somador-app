@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-
 import { connect } from 'react-redux';
+
+import Input from './Input';
+import { addValue, setValue } from '../actions';
 
 class SomadorForm extends React.Component {
     constructor(props) {
@@ -12,15 +14,31 @@ class SomadorForm extends React.Component {
         }
     }
 
+
+    onChangeValue(value) {
+        this.props.dispatchSetValue(value);
+    }
+
+    onPress() {
+        //console.log(this.props);
+        //const { item } = this.props;
+        //console.log(item);
+        //const { value } = item;
+        //this.props.dispatchAddValue(value);
+    }
+
     render() {
+        const { value } = this.props.value;
         return (
             <View style={styles.formContainer}>
                 <View style={styles.inputContainer}>
-                    <Text>Input</Text>
+                    <Input 
+                        onChangeValue={value => this.onChangeValue(value)}
+                        value={value}/>
                 </View>
                 <View style={styles.buttonContainer}>
                     <Button
-                        onPress={() => console.log('apertou')}
+                        onPress={() => this.onPress()}
                         title={'Add'}></Button>
                 </View>
             </View>
@@ -40,4 +58,7 @@ const styles = StyleSheet.create({
     }
 });
 
-export default connect()(SomadorForm);
+export default connect(null,{
+    dispatchAddValue: addValue,
+    distatchSetValue: setValue
+})(SomadorForm);
