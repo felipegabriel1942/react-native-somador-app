@@ -22,7 +22,6 @@ export default class SomadorApp extends React.Component {
                     <SomadorList />
                 </View>
             </Provider>
-            
         );
     }
 }

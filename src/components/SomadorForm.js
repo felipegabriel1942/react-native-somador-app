@@ -14,11 +14,30 @@ class SomadorForm extends React.Component {
 
     render() {
         return (
-            <View>
-                <Text>SomadorForm Funcionando!</Text>
+            <View style={styles.formContainer}>
+                <View style={styles.inputContainer}>
+                    <Text>Input</Text>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <Button
+                        onPress={() => console.log('apertou')}
+                        title={'Add'}></Button>
+                </View>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    formContainer: {
+        flexDirection: 'row'
+    },
+    inputContainer: {
+        flex: 5
+    },
+    buttonContainer: {
+        flex: 2
+    }
+});
 
 export default connect()(SomadorForm);
