@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => {
     return {
-        value: state.editingValue
+        value: state.editingValue,
+        values: state.values
     }
 }
 

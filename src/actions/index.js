@@ -9,3 +9,10 @@ export const setValue = value => ({
     type: SET_VALUE,
     value
 });
+
+
+export const SET_TOTAL_VALUE = 'SET_TOTAL_VALUE'
+export const setTotalValue = value => ({
+    type: SET_TOTAL_VALUE,
+    value
+})
