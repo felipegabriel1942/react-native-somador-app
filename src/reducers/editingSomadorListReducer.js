@@ -8,7 +8,6 @@ const INITAL_STATE = {
 const editingSomadorListReducer = (state = INITAL_STATE, action) => {
     switch(action.type) {
         case SET_VALUE: 
-            console.log('chegou no action de setar valor');
             return {
                 ...state,
                 value: action.value

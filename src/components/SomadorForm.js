@@ -20,11 +20,7 @@ class SomadorForm extends React.Component {
     }
 
     onPress() {
-        //console.log(this.props);
-        //const { item } = this.props;
-        //console.log(item);
-        //const { value } = item;
-        //this.props.dispatchAddValue(value);
+        this.props.dispatchAddValue(this.props.value.value);
     }
 
     render() {
@@ -58,7 +54,13 @@ const styles = StyleSheet.create({
     }
 });
 
-export default connect(null,{
+const mapStateToProps = state => {
+    return {
+        value: state.editingValue
+    }
+}
+
+export default connect(mapStateToProps,{
     dispatchAddValue: addValue,
-    distatchSetValue: setValue
+    dispatchSetValue: setValue
 })(SomadorForm);
