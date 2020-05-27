@@ -10,9 +10,8 @@ export const setValue = value => ({
     value
 });
 
-
-export const SET_TOTAL_VALUE = 'SET_TOTAL_VALUE'
-export const setTotalValue = value => ({
-    type: SET_TOTAL_VALUE,
+export const REMOVE_VALUE = 'REMOVE_VALUE'
+export const removeValue = value => ({
+    type: REMOVE_VALUE,
     value
-})
+});

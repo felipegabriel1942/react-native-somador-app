@@ -4,14 +4,19 @@ import { connect } from 'react-redux';
 
 import SomadorListItem from './SomadorListItem';
 
-const SomadorList = ({values}) => {
+import { removeValue } from '../actions';
+
+const SomadorList = ({values, dispatchRemoveValue}) => {
     return (
         <View>
-            {values.map(value => {
-                return <SomadorListItem
-                        key={value.id}
-                        value={value.value}/>
-            })}
+            {
+                values.map(value => {
+                    return <SomadorListItem
+                                key={value.id}
+                                value={value.value}
+                                onPressValue={() => dispatchRemoveValue(value)}/>
+                })
+            }
         </View>
     );
 }
@@ -21,4 +26,6 @@ const mapStateToProps = state => {
     return { values };
 }
 
-export default connect(mapStateToProps, {})(SomadorList);
+export default connect(mapStateToProps, {
+    dispatchRemoveValue: removeValue
+})(SomadorList);

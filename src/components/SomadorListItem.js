@@ -1,13 +1,19 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const SomadorListItem = ({value}) => {
+const SomadorListItem = ({ value , onPressValue}) => {
     return <TouchableOpacity>
-            <View style={styles.line}>
-                <Text style={styles.lineText}>{value}</Text>
-            </View>
-        </TouchableOpacity>
-
+                <View style={styles.line}>
+                    <Text style={styles.lineText}>{value}</Text>
+                    <Icon 
+                        name="trash-o" 
+                        size={30}
+                        color={'red'}
+                        style={styles.icon}
+                        onPress={onPressValue}/>
+                </View>
+            </TouchableOpacity>
 }
 
 const styles = StyleSheet.create({
@@ -22,7 +28,11 @@ const styles = StyleSheet.create({
     },
     lineText: {
         fontSize: 20,
-        paddingLeft: 15
+        paddingLeft: 15,
+        flex: 7
+    },
+    icon: {
+        flex: 1
     }
 });
 
